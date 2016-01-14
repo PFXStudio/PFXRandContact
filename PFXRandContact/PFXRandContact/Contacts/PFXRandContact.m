@@ -33,9 +33,14 @@
             return;
         }
 
-        NSError *error = [NSError errorWithDomain:[NSString stringWithFormat:@"%s %d", __func__, __LINE__] code:-100 userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"maxRand is 1000", @"comment", nil]];
+        NSError *error = [NSError errorWithDomain:[NSString stringWithFormat:@"%s %d", __func__, __LINE__] code:-100 userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"Over MAX_CREATE_NUMBER", @"comment", nil]];
         failure(error);
         
+        return;
+    }
+    
+    if (completion == nil)
+    {
         return;
     }
     
